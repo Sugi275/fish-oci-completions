@@ -82,7 +82,8 @@ complete -c oci -f -n '__fish_seen_subcommand_from compute-management;and __fish
 complete -c oci -f -n '__fish_seen_subcommand_from compute-management;and __fish_using_command oci compute-management instance-pool' -a 'create get list list-instances reset softreset start stop terminate update'
 
 # db
-complete -c oci -f -n '__fish_using_command oci db' -a 'autonomous-data-warehouse autonomous-data-warehouse-backup autonomous-database autonomous-database-backup backup data-guard-association database external-backup-job node patch patch-history system system-shape version'complete -c oci -f -n '__fish_seen_subcommand_from db;and __fish_using_command oci db autonomous-data-warehouse' -a 'create delete generate-wallet get list restore start stop update'
+complete -c oci -f -n '__fish_using_command oci db' -a 'autonomous-data-warehouse autonomous-data-warehouse-backup autonomous-database autonomous-database-backup backup data-guard-association database external-backup-job node patch patch-history system system-shape version'
+complete -c oci -f -n '__fish_seen_subcommand_from db;and __fish_using_command oci db autonomous-data-warehouse' -a 'create delete generate-wallet get list restore start stop update'
 complete -c oci -f -n '__fish_seen_subcommand_from db;and __fish_using_command oci db autonomous-data-warehouse-backup' -a 'create get list'
 complete -c oci -f -n '__fish_seen_subcommand_from db;and __fish_using_command oci db autonomous-database' -a 'create delete generate-wallet get list restore start stop update'
 complete -c oci -f -n '__fish_seen_subcommand_from db;and __fish_using_command oci db autonomous-database-backup' -a 'create get list'
@@ -123,7 +124,8 @@ complete -c oci -f -n '__fish_seen_subcommand_from iam;and __fish_using_command 
 complete -c oci -f -n '__fish_seen_subcommand_from iam;and __fish_using_command oci iam availability-domain' -a 'list'
 complete -c oci -f -n '__fish_seen_subcommand_from iam;and __fish_using_command oci iam compartment' -a 'create delete get list update'
 complete -c oci -f -n '__fish_seen_subcommand_from iam;and __fish_using_command oci iam customer-secret-key' -a 'create delete list update'
-complete -c oci -f -n '__fish_seen_subcommand_from iam;and __fish_using_command oci iam dynamic-group' -a 'create delete get list update'complete -c oci -f -n '__fish_seen_subcommand_from iam;and __fish_using_command oci iam fault-domain' -a 'list'
+complete -c oci -f -n '__fish_seen_subcommand_from iam;and __fish_using_command oci iam dynamic-group' -a 'create delete get list update'
+complete -c oci -f -n '__fish_seen_subcommand_from iam;and __fish_using_command oci iam fault-domain' -a 'list'
 complete -c oci -f -n '__fish_seen_subcommand_from iam;and __fish_using_command oci iam group' -a 'add-user create delete get list list-users remove-user update'
 complete -c oci -f -n '__fish_seen_subcommand_from iam;and __fish_using_command oci iam identity-provider-group' -a 'list'
 complete -c oci -f -n '__fish_seen_subcommand_from iam;and __fish_using_command oci iam policy' -a 'create delete get list update'
@@ -167,7 +169,8 @@ complete -c oci -f -n '__fish_seen_subcommand_from network;and __fish_using_comm
 complete -c oci -f -n '__fish_seen_subcommand_from network;and __fish_using_command oci network cross-connect' -a 'create delete get list update'
 complete -c oci -f -n '__fish_seen_subcommand_from network;and __fish_using_command oci network cross-connect-group' -a 'create delete get list update'
 complete -c oci -f -n '__fish_seen_subcommand_from network;and __fish_using_command oci network cross-connect-location' -a 'list'
-complete -c oci -f -n '__fish_seen_subcommand_from network;and __fish_using_command oci network cross-connect-port-speed-shape' -a 'list'complete -c oci -f -n '__fish_seen_subcommand_from network;and __fish_using_command oci network cross-connect-status' -a 'get'
+complete -c oci -f -n '__fish_seen_subcommand_from network;and __fish_using_command oci network cross-connect-port-speed-shape' -a 'list'
+complete -c oci -f -n '__fish_seen_subcommand_from network;and __fish_using_command oci network cross-connect-status' -a 'get'
 complete -c oci -f -n '__fish_seen_subcommand_from network;and __fish_using_command oci network dhcp-options' -a 'create delete get list
 update'
 complete -c oci -f -n '__fish_seen_subcommand_from network;and __fish_using_command oci network drg' -a 'create delete get list update'
