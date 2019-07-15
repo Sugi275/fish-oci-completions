@@ -96,6 +96,10 @@ complete -c oci -f -n '__fish_seen_subcommand_from compute;and __fish_using_comm
 complete -c oci -f -n '__fish_seen_subcommand_from compute;and __fish_using_command oci compute instance' -a 'action attach-vnic detach-vnic get get-windows-initial-creds launch list list-vnics terminate update'
 complete -c oci -f -n '__fish_seen_subcommand_from compute;and __fish_using_command oci compute instance-console-connection' -a 'create delete get get-plink-connection-string list'
 complete -c oci -f -n '__fish_seen_subcommand_from compute;and __fish_using_command oci compute pic' -a 'agreements listing subscription version'
+complete -c oci -f -n '__fish_seen_subcommand_from compute;and __fish_using_command oci compute pic agreements' -a 'get'
+complete -c oci -f -n '__fish_seen_subcommand_from compute;and __fish_using_command oci compute pic listing' -a 'get list'
+complete -c oci -f -n '__fish_seen_subcommand_from compute;and __fish_using_command oci compute pic subscription' -a 'create delete list'
+complete -c oci -f -n '__fish_seen_subcommand_from compute;and __fish_using_command oci compute pic version' -a 'get list'
 complete -c oci -f -n '__fish_seen_subcommand_from compute;and __fish_using_command oci compute shape' -a 'list'
 complete -c oci -f -n '__fish_seen_subcommand_from compute;and __fish_using_command oci compute vnic-attachment' -a 'get list'
 complete -c oci -f -n '__fish_seen_subcommand_from compute;and __fish_using_command oci compute volume-attachment' -a 'attach attach-iscsi-volume attach-paravirtualized-volume detach get list'
@@ -107,8 +111,7 @@ complete -c oci -f -n '__fish_seen_subcommand_from compute-management;and __fish
 
 # db
 complete -c oci -f -n '__fish_using_command oci db' -a 'autonomous-container-database autonomous-data-warehouse autonomous-data-warehouse-backup autonomous-database autonomous-database-backup autonomous-exadata-infrastructure autonomous-exadata-infrastructure-shape backup data-guard-association database external-backup-job maintenance-run node patch patch-history system system-shape version'
-complete -c oci -f -n '__fish_seen_subcommand_from db;and __fish_using_command oci db autonomous-container-database' -a 'create get list restart terminate
-update'
+complete -c oci -f -n '__fish_seen_subcommand_from db;and __fish_using_command oci db autonomous-container-database' -a 'create get list restart terminate update'
 complete -c oci -f -n '__fish_seen_subcommand_from db;and __fish_using_command oci db autonomous-data-warehouse' -a 'create delete generate-wallet get list restore start stop update'
 complete -c oci -f -n '__fish_seen_subcommand_from db;and __fish_using_command oci db autonomous-data-warehouse-backup' -a 'create get list'
 complete -c oci -f -n '__fish_seen_subcommand_from db;and __fish_using_command oci db autonomous-database' -a 'create create-from-clone delete generate-wallet get list restore start stop update'
@@ -117,12 +120,17 @@ complete -c oci -f -n '__fish_seen_subcommand_from db;and __fish_using_command o
 complete -c oci -f -n '__fish_seen_subcommand_from db;and __fish_using_command oci db autonomous-exadata-infrastructure-shape' -a 'list'
 complete -c oci -f -n '__fish_seen_subcommand_from db;and __fish_using_command oci db backup' -a 'create delete get list'
 complete -c oci -f -n '__fish_seen_subcommand_from db;and __fish_using_command oci db data-guard-association' -a 'create failover get list reinstate switchover'
+complete -c oci -f -n '__fish_seen_subcommand_from db;and __fish_using_command oci db data-guard-association create' -a 'from-existing-db-system with-new-db-system'
 complete -c oci -f -n '__fish_seen_subcommand_from db;and __fish_using_command oci db database' -a 'create create-from-backup delete get list patch restore update'
 complete -c oci -f -n '__fish_seen_subcommand_from db;and __fish_using_command oci db external-backup-job' -a 'complete create get'
 complete -c oci -f -n '__fish_seen_subcommand_from db;and __fish_using_command oci db maintenance-run' -a 'get list update'
 complete -c oci -f -n '__fish_seen_subcommand_from db;and __fish_using_command oci db node' -a 'get list reset soft-reset start stop'
 complete -c oci -f -n '__fish_seen_subcommand_from db;and __fish_using_command oci db patch' -a 'get list'
+complete -c oci -f -n '__fish_seen_subcommand_from db;and __fish_using_command oci db patch get' -a 'by-database by-db-system'
+complete -c oci -f -n '__fish_seen_subcommand_from db;and __fish_using_command oci db patch list' -a 'by-database by-db-system'
 complete -c oci -f -n '__fish_seen_subcommand_from db;and __fish_using_command oci db patch-history' -a 'get list'
+complete -c oci -f -n '__fish_seen_subcommand_from db;and __fish_using_command oci db patch-history get' -a 'by-database by-db-system'
+complete -c oci -f -n '__fish_seen_subcommand_from db;and __fish_using_command oci db patch-history list' -a 'by-database by-db-system'
 complete -c oci -f -n '__fish_seen_subcommand_from db;and __fish_using_command oci db system' -a 'get get-exadata-iorm-config launch launch-from-backup list patch terminate update update-exadata-iorm-config'
 complete -c oci -f -n '__fish_seen_subcommand_from db;and __fish_using_command oci db system-shape' -a 'list'
 complete -c oci -f -n '__fish_seen_subcommand_from db;and __fish_using_command oci db version' -a 'list'
@@ -130,6 +138,9 @@ complete -c oci -f -n '__fish_seen_subcommand_from db;and __fish_using_command o
 # dns
 complete -c oci -f -n '__fish_using_command oci dns' -a 'record steering-policy steering-policy-attachment zone'
 complete -c oci -f -n '__fish_seen_subcommand_from dns;and __fish_using_command oci dns record' -a 'domain rrset zone'
+complete -c oci -f -n '__fish_seen_subcommand_from dns;and __fish_using_command oci dns record domain' -a 'delete get patch update'
+complete -c oci -f -n '__fish_seen_subcommand_from dns;and __fish_using_command oci dns record rrset' -a 'delete get patch update'
+complete -c oci -f -n '__fish_seen_subcommand_from dns;and __fish_using_command oci dns record zone' -a 'get patch update'
 complete -c oci -f -n '__fish_seen_subcommand_from dns;and __fish_using_command oci dns steering-policy' -a 'create delete get list update'
 complete -c oci -f -n '__fish_seen_subcommand_from dns;and __fish_using_command oci dns steering-policy-attachment' -a 'create delete get list update'
 complete -c oci -f -n '__fish_seen_subcommand_from dns;and __fish_using_command oci dns zone' -a 'create delete get list update'
@@ -168,8 +179,7 @@ complete -c oci -f -n '__fish_seen_subcommand_from iam;and __fish_using_command 
 complete -c oci -f -n '__fish_seen_subcommand_from iam;and __fish_using_command oci iam fault-domain' -a 'list'
 complete -c oci -f -n '__fish_seen_subcommand_from iam;and __fish_using_command oci iam group' -a 'add-user create delete get list list-users remove-user update'
 complete -c oci -f -n '__fish_seen_subcommand_from iam;and __fish_using_command oci iam identity-provider-group' -a 'list'
-complete -c oci -f -n '__fish_seen_subcommand_from iam;and __fish_using_command oci iam mfa-totp-device' -a 'activate create delete generate-totp-seed get
-list'
+complete -c oci -f -n '__fish_seen_subcommand_from iam;and __fish_using_command oci iam mfa-totp-device' -a 'activate create delete generate-totp-seed get list'
 complete -c oci -f -n '__fish_seen_subcommand_from iam;and __fish_using_command oci iam policy' -a 'create delete get list update'
 complete -c oci -f -n '__fish_seen_subcommand_from iam;and __fish_using_command oci iam region' -a 'list'
 complete -c oci -f -n '__fish_seen_subcommand_from iam;and __fish_using_command oci iam region-subscription' -a 'create list'
@@ -180,16 +190,19 @@ complete -c oci -f -n '__fish_seen_subcommand_from iam;and __fish_using_command 
 complete -c oci -f -n '__fish_seen_subcommand_from iam;and __fish_using_command oci iam tag-namespace' -a 'change-compartment create delete get list reactivate retire update'
 complete -c oci -f -n '__fish_seen_subcommand_from iam;and __fish_using_command oci iam ui-password-information' -a 'get-user'
 complete -c oci -f -n '__fish_seen_subcommand_from iam;and __fish_using_command oci iam user' -a 'api-key create delete get list list-groups swift-password ui-password update update-user-capabilities update-user-state'
+complete -c oci -f -n '__fish_seen_subcommand_from iam;and __fish_using_command oci iam user api-key' -a 'delete list upload'
 complete -c oci -f -n '__fish_seen_subcommand_from iam;and __fish_using_command oci iam work-request' -a 'get list'
 
 # kms
 complete -c oci -f -n '__fish_using_command oci kms' -a 'crypto management'
 complete -c oci -f -n '__fish_seen_subcommand_from kms;and __fish_using_command oci kms crypto' -a 'decrypt encrypt generate-data-encryption-key'
 complete -c oci -f -n '__fish_seen_subcommand_from kms;and __fish_using_command oci kms management' -a 'key key-version vault'
+complete -c oci -f -n '__fish_seen_subcommand_from kms;and __fish_using_command oci kms management key' -a 'create disable enable get list update'
+complete -c oci -f -n '__fish_seen_subcommand_from kms;and __fish_using_command oci kms management key-version' -a 'create get list'
+complete -c oci -f -n '__fish_seen_subcommand_from kms;and __fish_using_command oci kms management vault' -a 'cancel-deletion create get list schedule-deletion update'
 
 # lb
-complete -c oci -f -n '__fish_using_command oci lb' -a 'backend backend-health backend-set backend-set-health certificate health-checker hostname listener
-load-balancer load-balancer-health path-route-set policy protocol rule-set shape work-request'
+complete -c oci -f -n '__fish_using_command oci lb' -a 'backend backend-health backend-set backend-set-health certificate health-checker hostname listener load-balancer load-balancer-health path-route-set policy protocol rule-set shape work-request'
 complete -c oci -f -n '__fish_seen_subcommand_from lb;and __fish_using_command oci lb backend' -a 'create delete get list update'
 complete -c oci -f -n '__fish_seen_subcommand_from lb;and __fish_using_command oci lb backend-health' -a 'get'
 complete -c oci -f -n '__fish_seen_subcommand_from lb;and __fish_using_command oci lb backend-set' -a 'create delete get list update'
@@ -255,8 +268,7 @@ complete -c oci -f -n '__fish_seen_subcommand_from ons;and __fish_using_command 
 complete -c oci -f -n '__fish_seen_subcommand_from ons;and __fish_using_command oci ons topic' -a 'create delete get list update'
 
 # os
-complete -c oci -f -n '__fish_using_command oci os' -a 'bucket multipart ns object object-lifecycle-policy preauth-request work-request work-request-error
-work-request-log-entry'
+complete -c oci -f -n '__fish_using_command oci os' -a 'bucket multipart ns object object-lifecycle-policy preauth-request work-request work-request-error work-request-log-entry'
 complete -c oci -f -n '__fish_seen_subcommand_from os;and __fish_using_command oci os bucket' -a 'create delete get list update'
 complete -c oci -f -n '__fish_seen_subcommand_from os;and __fish_using_command oci os multipart' -a 'abort list'
 complete -c oci -f -n '__fish_seen_subcommand_from os;and __fish_using_command oci os ns' -a 'get get-metadata update-metadata'
@@ -286,7 +298,11 @@ complete -c oci -f -n '__fish_using_command oci setup' -a 'autocomplete bootstra
 # streaming
 complete -c oci -f -n '__fish_using_command oci streaming' -a 'admin stream'
 complete -c oci -f -n '__fish_seen_subcommand_from streaming;and __fish_using_command oci streaming admin' -a 'stream'
+complete -c oci -f -n '__fish_seen_subcommand_from streaming;and __fish_using_command oci streaming admin stream' -a 'create delete get list update'
 complete -c oci -f -n '__fish_seen_subcommand_from streaming;and __fish_using_command oci streaming stream' -a 'cursor group message'
+complete -c oci -f -n '__fish_seen_subcommand_from streaming;and __fish_using_command oci streaming stream cursor' -a 'create-cursor create-group-cursor'
+complete -c oci -f -n '__fish_seen_subcommand_from streaming;and __fish_using_command oci streaming stream group' -a 'commit get heartbeat update'
+complete -c oci -f -n '__fish_seen_subcommand_from streaming;and __fish_using_command oci streaming stream message' -a 'get put'
 
 # waas
 complete -c oci -f -n '__fish_using_command oci waas' -a 'access-rule address-rate-limiting captcha certificate device-fingerprint-challenge edge-subnet good-bot human-interaction-challenge js-challenge policy-config protection-rule protection-settings recommendation threat-feed waas-policy waf-blocked-request waf-config waf-log waf-request waf-traffic-datum whitelist work-request'
@@ -318,3 +334,4 @@ complete -c oci -f -n '__fish_using_command oci work-requests' -a 'work-request 
 complete -c oci -f -n '__fish_seen_subcommand_from work-requests;and __fish_using_command oci work-requests work-request' -a 'get list'
 complete -c oci -f -n '__fish_seen_subcommand_from work-requests;and __fish_using_command oci work-requests work-request-error' -a 'list'
 complete -c oci -f -n '__fish_seen_subcommand_from work-requests;and __fish_using_command oci work-requests work-request-log-entry' -a 'list'
+
