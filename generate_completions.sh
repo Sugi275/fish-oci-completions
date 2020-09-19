@@ -3,6 +3,9 @@
 cp -p ./oci_template.fish ./oci.fish
 
 set root_strings (env COMP_WORDS="oci" COMP_CWORD=1 _OCI_COMPLETE=complete oci)
+echo "# main command" | tee -a ./oci.fish
+echo "complete -c oci -f -n '__fish_using_command oci' -a '$root_strings'" | tee -a ./oci.fish
+echo "" | tee -a ./oci.fish
 
 for subcommand1 in $root_strings
   echo "# $subcommand1" | tee -a ./oci.fish
